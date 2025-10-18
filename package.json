@@ -1,0 +1,30 @@
+{
+  "name": "speed-test",
+  "version": "0.1.0",
+  "description": "Speed Test",
+  "scripts": {
+    "start": "HTTP_PORT=3000 node --watch src/index.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravshansbox/speed-test.git"
+  },
+  "homepage": "https://github.com/ravshansbox/speed-test#readme",
+  "bugs": {
+    "url": "https://github.com/ravshansbox/speed-test/issues"
+  },
+  "author": "Ravshan Samandarov",
+  "license": "MIT",
+  "keywords": [
+    "speed",
+    "test",
+    "internet",
+    "bandwidth"
+  ],
+  "dependencies": {
+    "find-my-way": "^9.3.0"
+  }
+}
