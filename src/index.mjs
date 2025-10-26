@@ -17,9 +17,13 @@ router.on('GET', '/', (request, response) => {
     `http://${request.headers.host}`
   )
   const sizeParam = searchParams.get('size')
-  const size = sizeParam ? parseInt(sizeParam, 10) : DEFAULT_SIZE
-  response.writeHead(200, { 'Content-Type': 'application/octet-stream' })
-  createSizeStream(size * 1024 * 1024).pipe(response)
+  const size = sizeParam ? parseInt(sizeParam, 10) : parseInt(DEFAULT_SIZE, 10)
+  const sizeInBytes = size * 1024 * 1024
+  response.writeHead(200, {
+    'Content-Type': 'application/octet-stream',
+    'Content-Length': sizeInBytes,
+  })
+  createSizeStream(sizeInBytes).pipe(response)
 })
 
 router.on('GET', '/health', (_request, response) => {
