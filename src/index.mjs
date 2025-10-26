@@ -17,7 +17,7 @@ router.on('GET', '/', (request, response) => {
     `http://${request.headers.host}`
   )
   const sizeParam = searchParams.get('size')
-  const size = sizeParam ? parseInt(sizeParam, 10) : DEFAULT_SIZE
+  const size = sizeParam ? parseInt(sizeParam, 10) : parseInt(DEFAULT_SIZE, 10)
   const sizeInBytes = size * 1024 * 1024
   response.writeHead(200, {
     'Content-Type': 'application/octet-stream',
